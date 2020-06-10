@@ -23,8 +23,8 @@ In Ubuntu(18.04) work using putty by providing the key.
 1.apt-grt update
 2.apt install docker.io
 3.git clone any node_project
-4.db.js
 
+4.db.js
 const mongoose = require('mongoose');
 const {
   MONGO_USERNAME,
@@ -50,10 +50,20 @@ mongoose.connect(url, options).then( function() {
   console.log(err);
 });
 
+Dockerfile
+FROM node:10-alpine
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY package*.json ./
+USER node
+RUN npm install
+COPY --chown=node:node . .
+EXPOSE 8080
+CMD [ "node", "app.js" ]
+
 
 docker_compose.yml
 version: '3'
-
 services:
   nodejs:
     build:
