@@ -50,6 +50,15 @@ mongoose.connect(url, options).then( function() {
   console.log(err);
 });
 
+
+Create .env fie
+MONGO_USERNAME=anup
+MONGO_PASSWORD=your_password
+MONGO_PORT=27017
+MONGO_DB=sharkinfo
+
+
+
 Dockerfile
 FROM node:10-alpine
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
