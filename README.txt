@@ -1,5 +1,6 @@
 # node_project
 1.Create a new user in the IAM Section on AWS.
+
 2.Create *.tf file.
 			provider "aws" {
 			access_key = "access_key_here"
@@ -11,8 +12,11 @@
 			instance_type="t2.micro"
 			key_name = "key-name"
 			}
+			
 3.terraform init in the location where .tf file is present
+
 4.terraform plan to see the things what it can do when we apply it.
+
 5.terraform apply
 
 In Ubuntu(18.04) work using putty by providing the key.
@@ -20,8 +24,8 @@ In Ubuntu(18.04) work using putty by providing the key.
 2.apt install docker.io
 3.git clone any node_project
 4.db.js
-const mongoose = require('mongoose');
 
+const mongoose = require('mongoose');
 const {
   MONGO_USERNAME,
   MONGO_PASSWORD,
